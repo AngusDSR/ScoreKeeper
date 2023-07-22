@@ -6,12 +6,21 @@
 // selecting changest the playTo value span and
 
 const playToSelectionDiv = document.getElementById('dropdown-container-playTo')
-const playToButton = document.getElementById('playToSelectionButton');
-playToButton.addEventListener('click', () => {
-  console.log(playToSelectionDiv.style.display)
-  playToSelectionDiv.style.display = "block"
-})
+const playToButton = document.getElementById('playToSelectionButton')
+const playToSelection = document.getElementById('playToSelection')
+const PlayToOptions = document.querySelectorAll('.dropdown-selection-playTo')
+let PlayToScore = null;
 
+playToButton.addEventListener('click', () => {
+  playToSelectionDiv.style.display = `${playToSelectionDiv.style.display != 'block' ? 'block': 'none' }`;
+  // playToSelectionDiv.style.display == '' ? playToSelectionDiv.style.display = "block" : null;
+})
+PlayToOptions.forEach((option) => {
+  option.addEventListener('click', () => {
+    playerOneScore, playToSelection.innerText = parseInt(option.innerText,10);
+    playToSelectionDiv.style.display = 'none';
+  })
+})
 
 
 const playerOneScoreSpan = document.getElementById('playerOneScore');

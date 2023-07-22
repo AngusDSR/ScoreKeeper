@@ -75,15 +75,20 @@ p {
 }
 
 #dropdown-container-playTo {
+  display: none;
   width: 2rem;
   margin: 0;
   padding: 0.25rem;
-  display: none;
   border: 1px solid #252525;
+  border
 }
 
 li.dropdown-selection-playTo {
   border-radius: 16px;
   list-style: none;
   text-align: center;
+}
+.dropdown-selection-playTo:hover {
+  background-color: #252525;
+  color: #d6d6d6
 }
