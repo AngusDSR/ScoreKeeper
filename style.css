@@ -56,10 +56,29 @@ p {
   padding: 0;
 }
 
-ul.dropdown-container-playTo {
+#playToSelectionButton {
+  margin: 0;
+  padding: 2px 8px;
+  border: solid rgba(0, 0, 0, 0.692) 1px;
+  border-radius: 16px;
+  font-size: 0.8rem;
+  font-family: 'Rubik', sans-serif;
+}
+#playToSelectionButton:hover {
+  background-color: #e4e4e4;
+
+}
+
+#playToSelection {
+  color: rgb(20, 54, 204);
+  margin-right: 4px;
+}
+
+#dropdown-container-playTo {
   width: 2rem;
   margin: 0;
   padding: 0.25rem;
+  display: none;
   border: 1px solid #252525;
 }
 
