@@ -10,7 +10,7 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  border: solid rgba(0, 0, 0, 0.13) 0.2px;
+  border: 1px solid rgba(0, 0, 0, 0.13);
   border-radius: 9px;
   box-shadow: 3px 3px 6px #3331312d;
 }
@@ -21,6 +21,7 @@ section {
   display: flex;
   flex-direction: column;
 }
+
 h1 {
   margin: 0;
   font-size: 1.2rem;
@@ -30,7 +31,7 @@ h1 {
   width: 100%;
   height: 12rem;
   margin: 0 auto;
-  border-bottom: solid rgba(0, 0, 0, 0.13) 0.2px;
+  border-bottom: 0.2px solid rgba(0, 0, 0, 0.13);
   border-radius: 5px 5px 0 0;
   object-fit: cover;
 }
@@ -44,30 +45,32 @@ p {
   margin: 0.5rem 0;
   font-size: 1.6rem;
 }
+
 .playerScoreSpan {
   font-weight: bold;
 }
+
 #playerOneScore {
   color: #2D427A;
 }
+
 #playerTwoScore {
   color: #d47d02;
 }
-
 
 /* DROPDOWN SCORE SELECTION */
 #playToSelectionButton {
   margin: 0;
   padding: 2px 8px;
-  border: solid rgba(0, 0, 0, 0.692) 1px;
+  border: 1px solid rgba(0, 0, 0, 0.692);
   border-radius: 16px;
   font-size: 0.8rem;
   font-family: 'Rubik', sans-serif;
   cursor: pointer;
 }
+
 #playToSelectionButton:hover {
   background-color: #e4e4e4;
-
 }
 
 #playToSelection {
@@ -77,9 +80,6 @@ p {
 
 #dropdown-container-playTo {
   display: none;
-  position: relative;
-  top: 531;
-  left: 387;
   width: 2rem;
   margin: 0;
   padding: 0.25rem;
@@ -92,9 +92,10 @@ li.dropdown-selection-playTo {
   text-align: center;
   cursor: pointer;
 }
+
 .dropdown-selection-playTo:hover {
   background-color: #252525;
-  color: #d6d6d6
+  color: #d6d6d6;
 }
 
 /* BUTTONS */
@@ -124,7 +125,7 @@ li.dropdown-selection-playTo {
 }
 
 .playerButtons {
-  border: solid red 2px;
+  border: 2px solid red;
 }
 
 #button-playerOne-score {
@@ -134,6 +135,7 @@ li.dropdown-selection-playTo {
 #button-playerTwo-score {
   background-color: #d47d02;
 }
+
 .playerButtons::before {
   content: "+1";
   font-size: 1rem;
@@ -146,17 +148,17 @@ li.dropdown-selection-playTo {
   margin-right: 0.3rem;
 }
 
-.playerButtons:hover {
+.container-buttons button:hover {
   opacity: 1;
 }
 
 /* WINNER STYLES */
 .player-1-wins {
-  box-shadow: 0 0px 6px 0px #2D427A;
-  border: solid #2D427A 2px;
+  box-shadow: 0 0 6px 0 #2D427A;
+  border: 2px solid #2D427A;
 }
 
 .player-2-wins {
-  box-shadow: 0 0px 6px 0px #d47d02;
-  border: solid #d47d02 2px;
+  box-shadow: 0 0 6px 0 #d47d02;
+  border: 2px solid #d47d02;
 }

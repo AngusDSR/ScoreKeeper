@@ -8,6 +8,7 @@ const PlayToOptions = document.querySelectorAll('.dropdown-selection-playTo')
 const playerOneScoreSpan = document.getElementById('playerOneScore');
 const playerTwoScoreSpan = document.getElementById('playerTwoScore');
 const playerButtons = document.querySelectorAll('.playerButtons');
+const resetButton = document.getElementById('reset-button');
 let playerOneScore = 0;
 let playerTwoScore = 0;
 let PlayToScore = null;
@@ -23,7 +24,7 @@ playToButton.addEventListener('click', (e) => {
 // Add listeners to each play to score option to allow selection
 PlayToOptions.forEach((option) => {
   option.addEventListener('click', () => {
-    playerOneScore, playToSelection.innerText = parseInt(option.innerText,10);
+    playToSelection.innerText = parseInt(option.innerText,10);
     playToSelectionDiv.style.display = 'none';
     PlayToScore = parseInt(option.innerText,10);
   })
@@ -42,11 +43,8 @@ const addScore = (player) => {
 const showWinner = () => {
   if (playerOneScore > playerTwoScore) {
     containerBody.classList.add('player-1-wins');
-    // playerButtons[0].classList.add('winner-animation');
-
   } else {
     containerBody.classList.add('player-2-wins');
-    // playerButtons[1].style.backgroundColor = 'green';
   }
 }
 
@@ -75,3 +73,27 @@ playerButtons.forEach((button) => {
     checkScores();
   })
 })
+
+
+// Reset the game
+const resetGame = () => {
+  playToSelection.innerText = "Select"
+  playerOneScore = 0;
+  playerOneScoreSpan.innerText = playerOneScore;
+  playerTwoScore = 0;
+  playerTwoScoreSpan.innerText = playerOneScore;
+  console.log(playerOneScore, playerOneScoreSpan.innerText, playerTwoScore, playerTwoScoreSpan.innerText);
+  containerBody.classList.remove('player-1-wins');
+  containerBody.classList.remove('player-2-wins');
+  playerButtons.forEach((button, i) => {
+    button.disabled = false;
+    button.style.cursor = 'pointer';
+    if (i === 0) {
+      button.style.backgroundColor = '#2D427A';
+    } else {
+      button.style.backgroundColor = '#d47d02';
+    }
+  })
+1}
+
+resetButton.addEventListener('click', resetGame);
