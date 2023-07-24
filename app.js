@@ -11,14 +11,16 @@ const playToSelection = document.getElementById('playToSelection')
 const PlayToOptions = document.querySelectorAll('.dropdown-selection-playTo')
 let PlayToScore = null;
 
-playToButton.addEventListener('click', () => {
+playToButton.addEventListener('click', (e) => {
   playToSelectionDiv.style.display = `${playToSelectionDiv.style.display != 'block' ? 'block': 'none' }`;
-  // playToSelectionDiv.style.display == '' ? playToSelectionDiv.style.display = "block" : null;
 })
+
 PlayToOptions.forEach((option) => {
   option.addEventListener('click', () => {
     playerOneScore, playToSelection.innerText = parseInt(option.innerText,10);
     playToSelectionDiv.style.display = 'none';
+    PlayToScore = parseInt(option.innerText,10);
+    console.log('PlayToScore: ', PlayToScore);
   })
 })
 

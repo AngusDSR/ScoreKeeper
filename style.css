@@ -1,9 +1,5 @@
 body {
-  /* height: 100vh; */
-  font-family: sans-serif;
-  /* display: flex;
-  flex-direction: column;
-  align-items: center; */
+  font-family: Rubik, sans-serif;
 }
 
 .container {
@@ -30,19 +26,6 @@ h1 {
   font-size: 1.2rem;
 }
 
-.container-buttons {
-  width: 100%;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-evenly;
-}
-.container-buttons button {
-  width: 33%;
-  margin-top: 0.5rem;
-  font-size: 0.8rem;
-  cursor: pointer;
-}
-
 #banner-pingPong {
   width: 100%;
   height: 12rem;
@@ -56,6 +39,23 @@ p {
   padding: 0;
 }
 
+/* PLAYER SCORES TEXT */
+.playerScoreText {
+  margin: 0.5rem 0;
+  font-size: 1.6rem;
+}
+.playerScoreSpan {
+  font-weight: bold;
+}
+#playerOneScore {
+  color: #2D427A;
+}
+#playerTwoScore {
+  color: #d47d02;
+}
+
+
+/* DROPDOWN SCORE SELECTION */
 #playToSelectionButton {
   margin: 0;
   padding: 2px 8px;
@@ -63,6 +63,7 @@ p {
   border-radius: 16px;
   font-size: 0.8rem;
   font-family: 'Rubik', sans-serif;
+  cursor: pointer;
 }
 #playToSelectionButton:hover {
   background-color: #e4e4e4;
@@ -76,19 +77,75 @@ p {
 
 #dropdown-container-playTo {
   display: none;
+  position: relative;
+  top: 531;
+  left: 387;
   width: 2rem;
   margin: 0;
   padding: 0.25rem;
   border: 1px solid #252525;
-  border
 }
 
 li.dropdown-selection-playTo {
   border-radius: 16px;
   list-style: none;
   text-align: center;
+  cursor: pointer;
 }
 .dropdown-selection-playTo:hover {
   background-color: #252525;
   color: #d6d6d6
+}
+
+/* BUTTONS */
+.container-buttons {
+  padding-bottom: 6px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+}
+
+.container-buttons button {
+  width: 32%;
+  height: 2.8rem;
+  margin-top: 0.5rem;
+  font-size: 1rem;
+  font-weight: 400;
+  font-family: 'Rubik', sans-serif;
+  letter-spacing: 0.1px;
+  border: none;
+  border-radius: 4px;
+  background-color: #B02625;
+  color: #fff;
+  opacity: 0.85;
+  cursor: pointer;
+  transition: all 0.1s linear 0s;
+  text-align: center;
+}
+
+.playerButtons {
+  border: solid red 2px;
+}
+
+#button-playerOne-score {
+  background-color: #2D427A;
+}
+
+#button-playerTwo-score {
+  background-color: #d47d02;
+}
+.playerButtons::before {
+  content: "+1";
+  font-size: 1rem;
+  margin-right: 0.5rem;
+}
+
+.playerButtons:hover::before {
+  font-size: 1.2rem;
+  font-weight: 500;
+  margin-right: 0.3rem;
+}
+
+.playerButtons:hover {
+  opacity: 1;
 }
