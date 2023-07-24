@@ -8,10 +8,12 @@ const PlayToOptions = document.querySelectorAll('.dropdown-selection-playTo')
 const playerOneScoreSpan = document.getElementById('playerOneScore');
 const playerTwoScoreSpan = document.getElementById('playerTwoScore');
 const playerButtons = document.querySelectorAll('.playerButtons');
-const playerOneScore = 0;
-const playerTwoScore = 0;
+let playerOneScore = 0;
+let playerTwoScore = 0;
 let PlayToScore = null;
 
+// Winner's decoration
+const containerBody = document.querySelector('.container');
 
 // Show/hide the play to score selection
 playToButton.addEventListener('click', (e) => {
@@ -27,6 +29,38 @@ PlayToOptions.forEach((option) => {
   })
 })
 
+const addScore = (player) => {
+  if (player === 1) {
+    playerOneScore += 1;
+    playerOneScoreSpan.innerText = playerOneScore;
+  } else {
+    playerTwoScore += 1;
+    playerTwoScoreSpan.innerText = playerTwoScore;
+  }
+}
+
+const showWinner = () => {
+  if (playerOneScore > playerTwoScore) {
+    containerBody.classList.add('player-1-wins');
+    // playerButtons[0].classList.add('winner-animation');
+
+  } else {
+    containerBody.classList.add('player-2-wins');
+    // playerButtons[1].style.backgroundColor = 'green';
+  }
+}
+
+const checkScores = () => {
+  if (playerOneScore === PlayToScore || playerTwoScore === PlayToScore) {
+    playerButtons.forEach((button) => {
+      button.disabled = true;
+      button.style.cursor = 'not-allowed';
+      button.style.backgroundColor = 'grey';
+    })
+    showWinner();
+  }
+}
+
 // Add listeners to each player button to allow scoring
 playerButtons.forEach((button) => {
   button.addEventListener('click', (e) => {
@@ -34,15 +68,10 @@ playerButtons.forEach((button) => {
       alert('⚠️ Please select a score to play to first.');
       return;
     } else if (e.target.id === 'button-playerOne-score') {
-      playerOneScoreSpan.innerText = parseInt(playerOneScoreSpan.innerText,10) + 1;
-    } else if (e.target.id === 'button-playerTwo-score') {
-      playerTwoScoreSpan.innerText = parseInt(playerTwoScoreSpan.innerText,10) + 1;
-    } if (parseInt(playerOneScoreSpan.innerText,10) === PlayToScore) {
-      playerOneScoreSpan.classList.add('winner');
-      playerTwoScoreSpan.classList.add('loser');
-      playerButtons.forEach((button) => {
-        button.disabled = true;
-      })
+      addScore(1)
+    } else {
+      addScore(2)
     }
+    checkScores();
   })
 })

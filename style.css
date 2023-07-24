@@ -11,7 +11,7 @@ body {
   flex-direction: column;
   justify-content: center;
   border: solid rgba(0, 0, 0, 0.13) 0.2px;
-  border-radius: 5px;
+  border-radius: 9px;
   box-shadow: 3px 3px 6px #3331312d;
 }
 
@@ -148,4 +148,15 @@ li.dropdown-selection-playTo {
 
 .playerButtons:hover {
   opacity: 1;
+}
+
+/* WINNER STYLES */
+.player-1-wins {
+  box-shadow: 0 0px 6px 0px #2D427A;
+  border: solid #2D427A 2px;
+}
+
+.player-2-wins {
+  box-shadow: 0 0px 6px 0px #d47d02;
+  border: solid #d47d02 2px;
 }
