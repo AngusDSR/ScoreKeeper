@@ -12,6 +12,7 @@ let playerTwoScore = 0;
 let playToScore = 0;
 
 // Winner's decoration
+const titleText = document.querySelector('h1');
 const containerBody = document.querySelector('.container');
 
 // Show/hide the play to score selection
@@ -31,7 +32,9 @@ const addScore = (player) => {
 
 const showWinner = () => {
   const winnerClass = playerOneScore > playerTwoScore ? 'player-1-wins' : 'player-2-wins';
-  containerBody.classList.add(winnerClass);
+  titleText.innerText = playerOneScore > playerTwoScore ? 'Player 1 Wins!' : 'Player 2 Wins!';
+  containerBody.classList.add(`${winnerClass}-container`);
+  titleText.classList.add(`${winnerClass}-title`);
 };
 
 const checkScores = () => {
@@ -65,7 +68,8 @@ const resetGame = () => {
   playerOneScoreSpan.innerText = playerOneScore;
   playerTwoScore = 0;
   playerTwoScoreSpan.innerText = playerTwoScore;
-  containerBody.classList.remove('player-1-wins', 'player-2-wins');
+  containerBody.classList.remove('player-1-wins-container', 'player-2-wins-container');
+  titleText.classList.remove('player-1-wins-title', 'player-2-wins-title');
   playToSelector.disabled = false;
   console.dir(playToSelector);
   playToSelector.selectedIndex = 0;

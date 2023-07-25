@@ -15,6 +15,17 @@ body {
   box-shadow: 3px 3px 6px #3331312d;
 }
 
+h1.initial {
+  padding-bottom: 0.5rem;
+  background:
+    linear-gradient(to right, rgb(76, 94, 142), rgb(76, 94, 142)),
+    linear-gradient(to right, rgb(162, 92, 149), rgb(222, 98, 105), rgb(218, 144, 40));
+  background-size: 0 0.1em, 100% 0.1em;
+  background-position: 100% 100%, 0 100%;
+  background-repeat: no-repeat;
+  transition: background-size 400ms;
+}
+
 section {
   margin: 1rem;
   margin-bottom: 0;
@@ -74,7 +85,6 @@ p {
 }
 
 #playToSelector {
-  width: 3.5rem;
   margin-left: 4px;
 }
 
@@ -133,12 +143,18 @@ p {
 }
 
 /* WINNER STYLES */
-.player-1-wins {
+.player-1-wins-container {
   box-shadow: 0 0 6px 0 #2D427A;
   border: 2px solid #2D427A;
 }
+.player-1-wins-title {
+  color: #2D427A;
+}
 
-.player-2-wins {
+.player-2-wins-container {
   box-shadow: 0 0 6px 0 #d47d02;
   border: 2px solid #d47d02;
+}
+.player-2-wins-title {
+  color: #d47d02;
 }
