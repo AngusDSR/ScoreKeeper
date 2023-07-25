@@ -23,15 +23,19 @@
       </p>
       <p>Use the buttons below to keep the score as you play.</p>
       <div>
-        <p>Playing to: <span id="playToSelectionButton"><span id="playToSelection">Select</span><i class="fas fa-caret-down"></i></span></p>
-        <ul id="dropdown-container-playTo">
-          <li class="dropdown-selection-playTo">5</li>
-          <li class="dropdown-selection-playTo">6</li>
-          <li class="dropdown-selection-playTo">7</li>
-          <li class="dropdown-selection-playTo">8</li>
-          <li class="dropdown-selection-playTo">9</li>
-        <li class="dropdown-selection-playTo">10</li>
-      </ul>
+        <p>Playing to:
+          <select name="playTo" id="playToSelector">
+            <option value="0">Select</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+            <option value="6">6</option>
+            <option value="7">7</option>
+            <option value="8">8</option>
+            <option value="10">10</option>
+            <option value="20">20</option>
+          </select>
+        </p>
     </section>
     <div class="container-buttons">
       <button id="button-playerOne-score" class="playerButtons">Player One</button>

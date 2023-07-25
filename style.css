@@ -24,7 +24,7 @@ section {
 
 h1 {
   margin: 0;
-  font-size: 1.2rem;
+  font-size: 2rem;
 }
 
 #banner-pingPong {
@@ -59,43 +59,23 @@ p {
 }
 
 /* DROPDOWN SCORE SELECTION */
-#playToSelectionButton {
+#playToSelector {
   margin: 0;
   padding: 2px 8px;
-  border: 1px solid rgba(0, 0, 0, 0.692);
+  border: 1.5px solid rgba(0, 0, 0, 0.692);
   border-radius: 16px;
   font-size: 0.8rem;
   font-family: 'Rubik', sans-serif;
   cursor: pointer;
 }
 
-#playToSelectionButton:hover {
+#playToSelector:hover {
   background-color: #e4e4e4;
 }
 
-#playToSelection {
-  color: rgb(20, 54, 204);
-  margin-right: 4px;
-}
-
-#dropdown-container-playTo {
-  display: none;
-  width: 2rem;
-  margin: 0;
-  padding: 0.25rem;
-  border: 1px solid #252525;
-}
-
-li.dropdown-selection-playTo {
-  border-radius: 16px;
-  list-style: none;
-  text-align: center;
-  cursor: pointer;
-}
-
-.dropdown-selection-playTo:hover {
-  background-color: #252525;
-  color: #d6d6d6;
+#playToSelector {
+  width: 3.5rem;
+  margin-left: 4px;
 }
 
 /* BUTTONS */
